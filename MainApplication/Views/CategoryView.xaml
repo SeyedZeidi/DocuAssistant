@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="MainApplication.Views.CategoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:MainApplication.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance local:CategoryViewModel, IsDesignTimeCreatable=False}">
+
+    <materialDesign:Card Padding="16">
+
+        <StackPanel>
+            <!-- List of Categories -->
+            <DataGrid ItemsSource="{Binding Categories}" AutoGenerateColumns="False" SelectedItem="{Binding SelectedCategory, Mode=TwoWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Category Name" Binding="{Binding CategoryName}" />
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- Add Category Section -->
+            <StackPanel Margin="0,10,0,10">
+                <TextBlock Text="Add New Category" FontWeight="Bold" Foreground="{DynamicResource MaterialDesignBody}" />
+                <TextBox Text="{Binding NewCategoryName, Mode=TwoWay}" Height="25" Margin="0,5,0,5" />
+                <TextBox Text="{Binding NewCategoryDescription, Mode=TwoWay}" Height="25" Margin="0,5,0,5" />
+                <Button Content="Add Category" Command="{Binding AddCategoryCommand}" Height="25" Margin="0,5,0,0" Background="{DynamicResource MaterialDesignPrimary}" Foreground="Black" />
+            </StackPanel>
+
+            <!-- Remove and Edit Buttons -->
+            <StackPanel Margin="0,10,0,0">
+                <Button Content="Remove Category" Command="{Binding RemoveCategoryCommand}" Height="25" Background="{DynamicResource MaterialDesignPrimary}" Foreground="Black" />
+            </StackPanel>
+        </StackPanel>
+    </materialDesign:Card>
+</UserControl>

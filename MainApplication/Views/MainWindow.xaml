@@ -1,0 +1,63 @@
+﻿<Window x:Class="MainApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainApplication.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Document Assistant" Height="1080" Width="1920">
+
+    <Grid>
+        <!-- Column Definitions -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <!-- Sidebar -->
+            <ColumnDefinition Width="*" />
+            <!-- Main Content -->
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <!-- User -->
+            <RowDefinition Height="*" />
+            <!-- Main Content -->
+        </Grid.RowDefinitions>
+
+   
+    
+
+        <!-- Row 1: Sidebar -->
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- Row 0: CategoryView -->
+            <Border Grid.Row="0" Margin="10" CornerRadius="8">
+                <materialDesign:Card Padding="16">
+                    <local:CategoryView DataContext="{Binding CategoryViewModel}" />
+                </materialDesign:Card>
+            </Border>
+
+            <!-- Row 1: FolderSelectionView -->
+            <Border Grid.Row="1" Margin="10" CornerRadius="8">
+                <materialDesign:Card Padding="16">
+                    <local:FolderSelectionView DataContext="{Binding FolderSelectionViewModel}" />
+                </materialDesign:Card>
+            </Border>
+        </Grid>
+
+        <!-- Row 1: Main Content Area -->
+        <Border Grid.Row="1" Grid.Column="1" Margin="10" CornerRadius="8">
+            <materialDesign:Card Padding="16">
+                <!-- Add your main content here -->
+                <TextBlock Text="Main Content Goes Here" Foreground="Black">
+    
+                </TextBlock>
+            </materialDesign:Card>
+        </Border>
+    </Grid>
+</Window>

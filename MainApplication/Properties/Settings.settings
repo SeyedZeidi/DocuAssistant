@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MainApplication.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AZURE_OPENAI_API_KEY" Type="System.String" Scope="User">
+      <Value Profile="(Default)">59c92d510ae24dfa94308a91500b9af0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
